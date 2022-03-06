@@ -4,8 +4,12 @@ import Link from "@mui/material/Link";
 import HelpIcon from '@mui/icons-material/Help';
 import { Block } from "../../components";
 import { rechargeOptions, paymentOptions, faqContent } from "../../constants";
+import { useNavigate } from "react-router-dom";
+import Cookie from "js-cookie";
 
 const PaymentPage = (props) => {
+  const navigate = useNavigate();
+
 	const [rechargeType, setRechargeType] = useState("60uc");
 	const [selectedPayment, setSelectedPayment] = useState("");
 	const [userId, setUserId] = useState("");
@@ -17,6 +21,10 @@ const PaymentPage = (props) => {
 		setVisiblePrice(rechargeOptions[index].price);
 		setRechargeType(rechargeOption);
 	}
+
+  const handleBuyButton = () => {
+    navigate(`/testPayment?name=${Cookie.get("cardName")}&am=${visiblePrice}&email=${email}`);
+  }
 
 	return (
 		<div>
@@ -188,6 +196,7 @@ const PaymentPage = (props) => {
 											<button
 												className="buyButton"
 												type="button"
+												onClick={handleBuyButton}
 											>
 												Buy Now
 											</button>

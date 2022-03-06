@@ -1,6 +1,5 @@
 import { Navbar, Footer } from './components';
-import { PaymentPage } from './pages';
-import HomePage from './pages/home/homePage';
+import { PaymentPage, HomePage, PaymentCompletePage } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/testPayment" element={<PaymentCompletePage />} />
         </Routes>
         <Footer />
       </div>

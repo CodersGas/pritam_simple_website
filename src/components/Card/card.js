@@ -1,5 +1,6 @@
 import Grid from "@mui/material/Grid"
 import { Link } from "react-router-dom";
+import Cookie from "js-cookie";
 
 const Card = ({
   imgSrc,
@@ -7,9 +8,13 @@ const Card = ({
   title
 }) => {
 
+  const handleCardClick = () => {
+    Cookie.set("cardName", title);
+  }
+
   return (
     <Grid item xl={2} lg={2} md={4} xs={6} sm={6} className="cardGrid" >
-      <Link to="/payment" >
+      <Link to="/payment" onClick={handleCardClick} >
         <div className="cardDiv" >
           <img
             src={imgSrc}
