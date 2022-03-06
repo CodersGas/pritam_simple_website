@@ -247,7 +247,8 @@ img {
   font-size: 0.8rem;
   flex-wrap: wrap;
 }
-.copyrightDiv > a {
+.copyrightDiv > a,
+.cardGrid a {
   text-decoration: none;
   color: #000;
 }
