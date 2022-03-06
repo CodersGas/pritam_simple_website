@@ -200,3 +200,14 @@ export const digitalVoucherCards = [
     "title": "Blizzard Balance",
   },
 ];
+
+export const menuList = [
+  {
+    "text": "About Us",
+    "link": "#"
+  },
+  {
+    "text": "Contact Us",
+    "link": "#"
+  }
+]

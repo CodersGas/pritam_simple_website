@@ -348,6 +348,29 @@ img {
   font-size: 0.7rem;
   margin: 0.1rem 0 0.5rem;
 }
+.navLeftSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menuIcon {
+  cursor: pointer;
+}
+.menuContainerDiv {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.eachMenuItem {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem;
+}
+.eachMenuItem:hover {
+  background-color: #e0e0e0;
+}
 
 @media only screen and (max-width: 480px) {
   .allRechargeOptions {
