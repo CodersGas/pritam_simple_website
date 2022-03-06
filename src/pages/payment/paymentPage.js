@@ -108,7 +108,7 @@ const PaymentPage = (props) => {
 							</div>
 						</Grid>
 
-						<Grid item md={8} >
+						<Grid item md={8} xs={12} sm={12} >
 							<div className="allBlocksContainer" >
 								<Block
 									blockNumber={1}
@@ -204,35 +204,37 @@ const PaymentPage = (props) => {
 											OPTIONAL:  If you would like a receipt of the purchase by email, please enter an email address
 										</p>
 
-										<input
-											placeholder="E-mail address"
-											className="emailInput"
-											type="email"
-											onChange={(e) => setEmail(e.target.value)}
-											value={email}
-										/>
-										{
-											!email && hasSubmit &&
-											<p className="errorMsg" >Please enter email</p>
-										}
-										<div className="buyBottomDiv" >
-											<div className="checkboxInputDiv" >
-												<input
-													name="rememberMe"
-													type="checkbox"
-													checked={rememberMe}
-													onChange={(e) => setRememberMe(e.target.checked)}
-												/>
-												<label htmlFor="rememberMe" >Remember me</label>
-											</div>
+										<div className="inputBuyDiv" >
+											<input
+												placeholder="E-mail address"
+												className="emailInput"
+												type="email"
+												onChange={(e) => setEmail(e.target.value)}
+												value={email}
+											/>
+											{
+												!email && hasSubmit &&
+												<p className="errorMsg" >Please enter email</p>
+											}
+											<div className="buyBottomDiv" >
+												<div className="checkboxInputDiv" >
+													<input
+														name="rememberMe"
+														type="checkbox"
+														checked={rememberMe}
+														onChange={(e) => setRememberMe(e.target.checked)}
+													/>
+													<label htmlFor="rememberMe" >Remember me</label>
+												</div>
 
-											<button
-												className="buyButton"
-												type="button"
-												onClick={handleBuyButton}
-											>
-												Buy Now
-											</button>
+												<button
+													className="buyButton"
+													type="button"
+													onClick={handleBuyButton}
+												>
+													Buy Now
+												</button>
+											</div>
 										</div>
 									</div>
 								</Block>

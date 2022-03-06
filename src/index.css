@@ -9,6 +9,7 @@ body {
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
   margin:0;
   padding:0;
+  box-sizing: border-box;
 }
 html,body {
   margin:0;
@@ -130,6 +131,7 @@ img {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  flex-wrap: wrap;
 }
 .buyDiv {
   padding: 1rem;
@@ -141,6 +143,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .checkboxInputDiv {
   display: flex;
@@ -276,6 +279,7 @@ img {
   align-items: center;
   gap: 1rem;
   position: relative;
+  flex-wrap: wrap;
 }
 .helpIcon {
   color: #4527a0;
@@ -353,5 +357,9 @@ img {
   }
   .rechargeOptionDiv {
     width: auto;
+  }
+  .userIdInput,
+  .emailInput {
+    width: 100%;
   }
 }
