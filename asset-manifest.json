@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pritam_simple_website/static/css/main.9d565993.css",
-    "main.js": "/pritam_simple_website/static/js/main.c994741e.js",
+    "main.css": "/pritam_simple_website/static/css/main.d25024b8.css",
+    "main.js": "/pritam_simple_website/static/js/main.af3d9fdc.js",
     "static/js/787.ec704a7a.chunk.js": "/pritam_simple_website/static/js/787.ec704a7a.chunk.js",
     "index.html": "/pritam_simple_website/index.html",
-    "main.9d565993.css.map": "/pritam_simple_website/static/css/main.9d565993.css.map",
-    "main.c994741e.js.map": "/pritam_simple_website/static/js/main.c994741e.js.map",
+    "main.d25024b8.css.map": "/pritam_simple_website/static/css/main.d25024b8.css.map",
+    "main.af3d9fdc.js.map": "/pritam_simple_website/static/js/main.af3d9fdc.js.map",
     "787.ec704a7a.chunk.js.map": "/pritam_simple_website/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d565993.css",
-    "static/js/main.c994741e.js"
+    "static/css/main.d25024b8.css",
+    "static/js/main.af3d9fdc.js"
   ]
 }
