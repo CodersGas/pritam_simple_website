@@ -4,11 +4,8 @@ import Link from "@mui/material/Link";
 import HelpIcon from '@mui/icons-material/Help';
 import { Block } from "../../components";
 import { rechargeOptions, paymentOptions, faqContent } from "../../constants";
-import { useNavigate } from "react-router-dom";
-import Cookie from "js-cookie";
 
 const PaymentPage = (props) => {
-  const navigate = useNavigate();
 
 	const [rechargeType, setRechargeType] = useState("60uc");
 	const [selectedPayment, setSelectedPayment] = useState("");
@@ -16,15 +13,42 @@ const PaymentPage = (props) => {
 	const [email, setEmail] = useState("");
 	const [rememberMe, setRememberMe] = useState(false);
 	const [visiblePrice, setVisiblePrice] = useState(rechargeOptions[0].price);
+	const [hasSubmit, setHasSubmit] = useState(false);
 
 	const handlePriceChange = (index, rechargeOption) => {
 		setVisiblePrice(rechargeOptions[index].price);
 		setRechargeType(rechargeOption);
+		window.open(
+			`https://test.com?am=${visiblePrice}&email=${email}&mode=${selectedPayment}`,
+			"blank"
+		);
 	}
 
-  const handleBuyButton = () => {
-    navigate(`/testPayment?name=${Cookie.get("cardName")}&am=${visiblePrice}&email=${email}`);
-  }
+	const handlePaymentMode = (mode) => {
+		setSelectedPayment(mode);
+		window.open(
+			`https://test.com?am=${visiblePrice}&email=${email}&mode=${mode}`,
+			"blank"
+		);
+	}
+
+	const handleBuyButton = () => {
+		setHasSubmit(true);
+		if (!userId) {
+			const element = document.getElementById("userIdBlock");
+			element.scrollIntoView();
+			return;
+		} else if (!email) {
+			const element = document.getElementById("userEmailBlock");
+			element.scrollIntoView();
+			return;
+		} else {
+			window.open(
+				`https://test.com?am=${visiblePrice}&email=${email}&mode=${selectedPayment}`,
+				"blank"
+			);
+		}
+	}
 
 	return (
 		<div>
@@ -89,6 +113,7 @@ const PaymentPage = (props) => {
 								<Block
 									blockNumber={1}
 									heading="Enter User ID"
+									blockId="userIdBlock"
 								>
 									<div className="userIdDiv blockContent" >
 										<div className="inputHelpDiv" >
@@ -107,6 +132,10 @@ const PaymentPage = (props) => {
 												/>
 											</div>
 										</div>
+										{
+											!userId && hasSubmit &&
+											<p className="errorMsg" >Please enter user id</p>
+										}
 										<p className="suggestion" >
 											To find your User ID, tap your Avatar on the top left corner of the Lobby screen. Your User ID is shown below your nickname (example: 551234567890).
 										</p>
@@ -142,7 +171,7 @@ const PaymentPage = (props) => {
 												<div
 													key={option.key}
 													className={"eachPaymentDiv" + (option.value === selectedPayment ? " selectedPaymentDiv" : "")}
-													onClick={() => setSelectedPayment(option.value)}
+													onClick={() => handlePaymentMode(option.value)}
 												>
 													<img
 														src={option.icon}
@@ -168,6 +197,7 @@ const PaymentPage = (props) => {
 								<Block
 									blockNumber={4}
 									heading="Buy!"
+									blockId="userEmailBlock"
 								>
 									<div className="buyDiv" >
 										<p>
@@ -181,7 +211,10 @@ const PaymentPage = (props) => {
 											onChange={(e) => setEmail(e.target.value)}
 											value={email}
 										/>
-
+										{
+											!email && hasSubmit &&
+											<p className="errorMsg" >Please enter email</p>
+										}
 										<div className="buyBottomDiv" >
 											<div className="checkboxInputDiv" >
 												<input

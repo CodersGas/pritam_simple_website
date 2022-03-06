@@ -36,7 +36,7 @@ img {
 }
 .centerBodyContent {
   background-color: #4527a0;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 .allOptionsContainer {
   color: #fff;
@@ -256,7 +256,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
   width: 100%;
 }
 .navLogo {
@@ -338,4 +338,9 @@ img {
   border-bottom: 1px solid #757575;
   border-bottom-style: dashed;
   padding-bottom: 1rem;
+}
+.errorMsg {
+  color: #f44336;
+  font-size: 0.7rem;
+  margin: 0.1rem 0 0.5rem;
 }

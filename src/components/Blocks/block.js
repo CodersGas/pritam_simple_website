@@ -1,11 +1,12 @@
 const Block = ({
   blockNumber,
   heading,
+  blockId,
   children
 }) => {
 
   return (
-    <div className="blockStyle" >
+    <div className="blockStyle" id={blockId} >
       <h2>
         <span className="blockNumber" >
           {blockNumber}
