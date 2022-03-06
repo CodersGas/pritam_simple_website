@@ -18,18 +18,18 @@ const PaymentPage = (props) => {
 	const handlePriceChange = (index, rechargeOption) => {
 		setVisiblePrice(rechargeOptions[index].price);
 		setRechargeType(rechargeOption);
-		window.open(
-			`https://test.com?am=${visiblePrice}&email=${email}&mode=${selectedPayment}`,
-			"blank"
-		);
+		// window.open(
+		// 	`https://test.com?am=${visiblePrice}&email=${email}&mode=${selectedPayment}`,
+		// 	"blank"
+		// );
 	}
 
 	const handlePaymentMode = (mode) => {
 		setSelectedPayment(mode);
-		window.open(
-			`https://test.com?am=${visiblePrice}&email=${email}&mode=${mode}`,
-			"blank"
-		);
+		// window.open(
+		// 	`https://test.com?am=${visiblePrice}&email=${email}&mode=${mode}`,
+		// 	"blank"
+		// );
 	}
 
 	const handleBuyButton = () => {
