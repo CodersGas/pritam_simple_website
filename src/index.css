@@ -87,7 +87,7 @@ img {
   cursor: pointer;
   width: 100%;
   text-align: center;
-  width: 150px;
+  width: 130px;
 }
 .rechargeOptionDiv:hover,
 .rechargeOptionDivSelected,
@@ -343,4 +343,15 @@ img {
   color: #f44336;
   font-size: 0.7rem;
   margin: 0.1rem 0 0.5rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .allRechargeOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: auto;
+  }
+  .rechargeOptionDiv {
+    width: auto;
+  }
 }
